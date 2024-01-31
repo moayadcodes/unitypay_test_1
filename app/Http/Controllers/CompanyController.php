@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Company;
 use App\Models\User;
-use Illuminate\Support\Facades\Log;
 
 class CompanyController extends Controller
 {
     public function index()
     {
-        $companies = Company::all();
-
-        // TODO: Get companies along with its total users
+        $companies = Company::with('users')->get();
 
         return view('companies.index', ['companies' => $companies]);
     }
@@ -70,6 +67,4 @@ class CompanyController extends Controller
 
         return redirect()->route('companies.index')->with('success', "{$company->name} users successfully updated");
     }
-
-    // TODO: Write functions like show, update, showCompanyUsers and addUserToCompany here
 }

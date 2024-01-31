@@ -17,7 +17,6 @@ Route::get('/companies/{company}/add-users', [CompanyController::class, 'addUser
 Route::post('/companies', [CompanyController::class, 'store'])->name('companies.store');
 Route::patch('/companies/{company}', [CompanyController::class, 'update'])->name('companies.update');
 Route::post('/companies/{company}/add-users', [CompanyController::class, 'updateUsers']);
-// TODO: Add routes for companies.show, companies.update, companies.show_users, companies.add_users here
 
 // USERS
 Route::get('/users', [UserController::class, 'index'])->name('users.index');

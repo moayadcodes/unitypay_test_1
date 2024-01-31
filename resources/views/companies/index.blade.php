@@ -29,7 +29,7 @@
                         <td>{{ $company->name }}</td>
                         <td>??</td>
                         <td>
-                            <button class="btn btn-warning">Edit</button>
+                            <a href="{{ route('companies.edit', $company) }}" class="btn btn-warning">Edit</a>
                         </td>
                         <td>
                             <button class="btn btn-primary">+ Add Users</button>

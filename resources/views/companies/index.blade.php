@@ -4,6 +4,13 @@
 
 @section('content')
 
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
 <div class="card">
 
     <div class="card-header">Company List</div>
@@ -32,7 +39,7 @@
                             <a href="{{ route('companies.edit', $company) }}" class="btn btn-warning">Edit</a>
                         </td>
                         <td>
-                            <button class="btn btn-primary">+ Add Users</button>
+                            <a href="{{ route('companies.add_users', $company) }}" class="btn btn-primary">+ Add Users</a>
                         </td>
                     </tr>
                 @endforeach

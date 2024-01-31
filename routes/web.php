@@ -13,8 +13,10 @@ Route::get('/', function () {
 Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
 Route::get('/companies/add', [CompanyController::class, 'add'])->name('companies.add');
 Route::get('/companies/{company}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
+Route::get('/companies/{company}/add-users', [CompanyController::class, 'addUsers'])->name('companies.add_users');
 Route::post('/companies', [CompanyController::class, 'store'])->name('companies.store');
 Route::patch('/companies/{company}', [CompanyController::class, 'update'])->name('companies.update');
+Route::post('/companies/{company}/add-users', [CompanyController::class, 'updateUsers']);
 // TODO: Add routes for companies.show, companies.update, companies.show_users, companies.add_users here
 
 // USERS

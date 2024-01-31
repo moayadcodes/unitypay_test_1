@@ -49,7 +49,6 @@ class CompanyController extends Controller
 
     public function addUsers(Company $company)
     {
-        $company->load('users:id');
         $users = User::orderBy('name')->get();
 
         return view('companies.add-users', compact('company', 'users'));

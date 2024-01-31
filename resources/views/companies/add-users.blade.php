@@ -4,6 +4,13 @@
 
 @section('content')
 
+@if ($errors->any())
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        There was an error processing your form, please try again.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
 <div class="card">
 
     <div class="card-header">Add Users to {{ $company->name }}</div>
